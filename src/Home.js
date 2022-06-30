@@ -1,6 +1,9 @@
 import { useRef, useState } from "react";
 import styled from "styled-components";
 
+const env = process.env;
+env.PUBLIC_URL = env.PUBLIC_URL || "";
+
 const Wrapper = styled.div`
   width: 100%;
   height: 95vh;
@@ -43,7 +46,7 @@ const Alert = styled.div`
 
 const Container = styled.div`
   width: 100%;
-  height: 500px;
+  height: 550px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -54,6 +57,11 @@ const Container = styled.div`
   -ms-overflow-style: none;
   &::-webkit-scrollbar {
     display: none;
+  }
+  h2 {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 5px;
   }
   ul {
     width: 100%;
@@ -116,7 +124,7 @@ const ProfilCircle = styled.div`
 
 const InputBox = styled.section`
   width: 100%;
-  height: 300px;
+  height: 250px;
   background-color: rgb(247, 247, 247);
   position: absolute;
   display: flex;

@@ -3,7 +3,26 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import { createGlobalStyle } from "styled-components";
 
+const env = process.env;
+env.PUBLIC_URL = env.PUBLIC_URL || "";
+
+const FontUrl = `${env.PUBLIC_URL}/assets/fonts/`;
+
 const GlobalStyle = createGlobalStyle`
+
+@font-face {
+  font-family: "Maple_story";
+  src: url(${FontUrl}Maple_story_Bold.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Maple_story";
+  src: url(${FontUrl}Maple_story_Light.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -35,6 +54,7 @@ body {
   align-items: center;
 	line-height: 1;
   overflow: hidden;
+  font-family: "Maple_story";
 }
 ol, ul {
 	list-style: none;
