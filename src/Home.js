@@ -31,6 +31,7 @@ const Header = styled.header`
   justify-content: center;
   align-items: center;
   h1 {
+    font-weight: bold;
     font-size: 25px;
   }
 `;
@@ -74,6 +75,10 @@ const Container = styled.div`
       align-items: center;
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       margin-bottom: 10px;
+      transition: 0.5s;
+      &:hover {
+        transform: translateY(-5px);
+      }
       span {
         margin-right: 5px;
         display: block;
