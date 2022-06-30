@@ -55,6 +55,7 @@ body {
 	line-height: 1;
   overflow: hidden;
   font-family: "Maple_story";
+  background-color: RGB(68, 85, 51);
 }
 ol, ul {
 	list-style: none;

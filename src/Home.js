@@ -6,7 +6,7 @@ env.PUBLIC_URL = env.PUBLIC_URL || "";
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 95vh;
+  height: 90vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -15,9 +15,10 @@ const Wrapper = styled.div`
   margin: 20px 0px;
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  border: 5px solid rgb(58, 170, 91);
+  border: 10px solid rgb(58, 170, 91);
   position: relative;
   overflow: hidden;
+  background-color: white;
   h5 {
     text-align: right;
   }
@@ -202,7 +203,7 @@ const Home = () => {
   const [users, setUsers] = useState([
     { id: 1, username: "추홍규", comment: "하기 싫다", active: false },
     { id: 5, username: "민지원", comment: "열심히 하셔야죠.", active: false },
-    { id: 6, username: "강대국", comment: "열심히 하셔야죠", active: false },
+    { id: 6, username: "강대국", comment: "놀러 가시죠", active: false },
   ]);
 
   const nextId = useRef(7);
