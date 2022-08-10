@@ -8,7 +8,9 @@
 - 댓글 삭제
 - 댓글 수정
 
-[배포 페이지]("http://chuhongkyu.github.io/Comments_app")
+----
+
+[배포 페이지](http://chuhongkyu.github.io/Comments_app) - http://chuhongkyu.github.io/Comments_app
 
 ---
 
