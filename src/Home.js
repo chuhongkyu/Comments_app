@@ -50,10 +50,10 @@ const Container = styled.div`
   width: 100%;
   height: 550px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 20px;
+  padding: 10px;
   overflow-y: scroll;
   scroll-behavior: smooth;
   -ms-overflow-style: none;
@@ -70,19 +70,19 @@ const Container = styled.div`
     height: 100%;
     li {
       color: rgba(0, 0, 0, 0.7);
-      padding: 10px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       margin-bottom: 10px;
       transition: 0.5s;
+      padding: 10px 20px;
       &:hover {
         transform: translateY(-5px);
       }
       span {
         margin-right: 5px;
-        display: block;
+        display: inline-block;
         width: 30px;
         height: 30px;
         display: flex;
@@ -104,11 +104,12 @@ const Container = styled.div`
 `;
 
 const CommentsBox = styled.div`
+  width: 200px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  width: 50%;
+  overflow: hidden;
 `;
 
 const CommentsReBox = styled.div`
@@ -117,7 +118,7 @@ const CommentsReBox = styled.div`
   align-items: center;
 `;
 
-const ProfilCircle = styled.div`
+const ProfileCircle = styled.div`
   width: 60px;
   height: 60px;
   display: flex;
@@ -126,6 +127,9 @@ const ProfilCircle = styled.div`
   background-color: rgb(58, 170, 91);
   color: white;
   border-radius: 50%;
+  font-size: 25px;
+  overflow: hidden;
+  margin-right: 20px;
 `;
 
 const InputBox = styled.section`
@@ -250,11 +254,15 @@ const Home = () => {
               }
               key={index}
             >
-              <ProfilCircle>{file.username}</ProfilCircle>
+              <ProfileCircle>{file.username.substring(0, 1)}</ProfileCircle>
               <CommentsBox>
                 <h2>{file.username}</h2>
                 {!file.active ? (
-                  <p>{file.comment}</p>
+                  <p>
+                    {file.comment.length > 10
+                      ? file.comment.substring(0, 10) + "..."
+                      : file.comment}
+                  </p>
                 ) : (
                   <textarea
                     id={file.id}
@@ -282,12 +290,14 @@ const Home = () => {
               value={username}
               placeholder="성함"
               onChange={onChange}
+              maxLength="6"
             />
             <textarea
               name="comment"
               value={comment}
               placeholder="내용없음"
               onChange={onChange}
+              maxLength="50"
             />
             <button onClick={onCreate}>등록</button>
           </div>
